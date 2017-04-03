@@ -1,5 +1,5 @@
 <?php
-/*
+/**
  * 2007-2016 PrestaShop
  *
  * NOTICE OF LICENSE
@@ -24,17 +24,21 @@
  * International Registered Trademark & Property of PrestaShop SA
  */
 
-namespace PsOneSixMigrator;
+use PsOneSixMigrator\Db;
 
 function ps1_6_1_0_alter_ignore_drop_key($table, $key)
 {
-    $indexes = Db::getInstance()->executeS('
+    $indexes = Db::getInstance()->executeS(
+        '
         SHOW INDEX FROM `'._DB_PREFIX_.pSQL($table).'` WHERE Key_name = \''.pSQL($key).'\'
-    ');
+    '
+    );
 
     if (count($indexes) > 0) {
-        Db::getInstance()->execute('
+        Db::getInstance()->execute(
+            '
             ALTER TABLE `'._DB_PREFIX_.pSQL($table).'` DROP KEY `'.pSQL($key).'`
-        ');
+        '
+        );
     }
 }
