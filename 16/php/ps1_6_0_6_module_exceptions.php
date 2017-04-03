@@ -24,6 +24,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
+namespace PsOneSixMigrator;
+
 function ps1_6_0_6_module_exceptions()
 {
     $modules_dir = scandir(_PS_MODULE_DIR_);

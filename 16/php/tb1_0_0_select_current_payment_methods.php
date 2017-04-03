@@ -24,6 +24,8 @@
  * International Registered Trademark & Property of PrestaShop SA
  */
 
+namespace PsOneSixMigrator;
+
 /**
  * Select all current payment modules for the carrier restriction
  */

@@ -24,6 +24,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
+namespace PsOneSixMigrator;
+
 function ps1_6_0_7_drop_primary_key_if_exists()
 {
     if (Db::getInstance()->executeS('SHOW INDEX FROM `'._DB_PREFIX_.'order_detail_tax` WHERE Key_name = "PRIMARY"')) {

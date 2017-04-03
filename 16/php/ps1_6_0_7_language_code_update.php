@@ -24,6 +24,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
+namespace PsOneSixMigrator;
+
 function ps1_6_0_7_language_code_update()
 {
     if (defined('_PS_VERSION_')) {

@@ -24,6 +24,8 @@
  * International Registered Trademark & Property of PrestaShop SA
  */
 
+namespace PsOneSixMigrator;
+
 function ps1_6_1_0_alter_ignore_drop_key($table, $key)
 {
     $indexes = Db::getInstance()->executeS('

@@ -24,6 +24,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
+namespace PsOneSixMigrator;
+
 function ps1_6_0_1_add_missing_index()
 {
     $keyExists = Db::getInstance()->executeS(

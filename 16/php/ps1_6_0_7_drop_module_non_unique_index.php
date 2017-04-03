@@ -23,6 +23,9 @@
 *  @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 */
+
+namespace PsOneSixMigrator;
+
 function ps1_6_0_7_drop_module_non_unique_index()
 {
     $index = Db::getInstance()->executeS('SHOW INDEX FROM `'._DB_PREFIX_.'module` WHERE Key_name = "name"');

@@ -24,6 +24,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
+namespace PsOneSixMigrator;
+
 function ps1_6_1_11_delete_conf_duplicate()
 {
     $sql = 'SELECT *

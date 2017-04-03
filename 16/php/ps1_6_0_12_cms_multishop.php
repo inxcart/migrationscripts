@@ -24,6 +24,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
+namespace PsOneSixMigrator;
+
 function ps1_6_0_12_cms_multishop()
 {
     $shops = Db::getInstance()->executeS('

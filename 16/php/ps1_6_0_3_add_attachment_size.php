@@ -24,6 +24,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 */
 
+namespace PsOneSixMigrator;
+
 function ps1_6_0_3_add_attachment_size()
 {
     $attachments = Db::getInstance()->ExecuteS('SELECT id_attachment, file FROM '._DB_PREFIX_.'attachment');
