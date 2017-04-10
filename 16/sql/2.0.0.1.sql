@@ -32,11 +32,12 @@ CREATE TABLE `PREFIX_redis_servers` (
 
 CREATE TABLE `PREFIX_url_rewrite` (
   `id_url_rewrite` INT(11) UNSIGNED    NOT NULL AUTO_INCREMENT,
-  `entity`        TINYINT(2) UNSIGNED NOT NULL,
-  `id_lang`       INT(11) UNSIGNED    NOT NULL,
-  `id_shop`       INT(11) UNSIGNED    NOT NULL,
-  `rewrite`       VARCHAR(1000)       NOT NULL,
-  `redirect`      TINYINT(2) UNSIGNED NOT NULL,
+  `id_entity`      INT(11) UNSIGNED    NOT NULL,
+  `entity`         TINYINT(2) UNSIGNED NOT NULL,
+  `id_lang`        INT(11) UNSIGNED    NOT NULL,
+  `id_shop`        INT(11) UNSIGNED    NOT NULL,
+  `rewrite`        VARCHAR(1000)       NOT NULL,
+  `redirect`       TINYINT(2) UNSIGNED NOT NULL,
   PRIMARY KEY (`id_url_rewrite`)
 )
   ENGINE = InnoDB
