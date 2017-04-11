@@ -69,4 +69,6 @@ function tb1_0_0_select_current_payment_modules()
             }
         }
     }
+    
+    return true;
 }
