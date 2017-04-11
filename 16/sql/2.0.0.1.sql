@@ -16,7 +16,7 @@ CREATE TABLE `PREFIX_module_carrier` (
   DEFAULT CHARSET = utf8mb4
   COLLATE utf8mb4_unicode_ci;
 
-/* PHP:tb1_0_0_select_current_payment_modules(); */
+/* PHP:tb1_0_0_select_current_payment_modules(); */;
 
 CREATE TABLE `PREFIX_redis_servers` (
   `id_redis_server` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
