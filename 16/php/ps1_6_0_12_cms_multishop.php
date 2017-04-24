@@ -46,11 +46,11 @@ function ps1_6_0_12_cms_multishop()
         $cms = array(
             'id_cms'           => $value['id_cms'],
             'id_lang'          => $value['id_lang'],
-            'content'          => pSQL($value['content'], true),
-            'link_rewrite'     => pSQL($value['link_rewrite']),
-            'meta_title'       => pSQL($value['meta_title']),
-            'meta_keywords'    => pSQL($value['meta_keywords']),
-            'meta_description' => pSQL($value['meta_description']),
+            'content'          => \pSQL($value['content'], true),
+            'link_rewrite'     => \pSQL($value['link_rewrite']),
+            'meta_title'       => \pSQL($value['meta_title']),
+            'meta_keywords'    => \pSQL($value['meta_keywords']),
+            'meta_description' => \pSQL($value['meta_description']),
         );
         foreach ($shops as $shop) {
             if ($shop['id_shop'] != 1) {
@@ -77,12 +77,12 @@ function ps1_6_0_12_cms_multishop()
         $cmsCategory = array(
             'id_cms_category'  => $value['id_cms_category'],
             'id_lang'          => $value['id_lang'],
-            'name'             => pSQL($value['name']),
-            'description'      => pSQL($value['description']),
-            'link_rewrite'     => pSQL($value['link_rewrite']),
-            'meta_title'       => pSQL($value['meta_title']),
-            'meta_keywords'    => pSQL($value['meta_keywords']),
-            'meta_description' => pSQL($value['meta_description']),
+            'name'             => \pSQL($value['name']),
+            'description'      => \pSQL($value['description']),
+            'link_rewrite'     => \pSQL($value['link_rewrite']),
+            'meta_title'       => \pSQL($value['meta_title']),
+            'meta_keywords'    => \pSQL($value['meta_keywords']),
+            'meta_description' => \pSQL($value['meta_description']),
         );
         foreach ($shops as $shop) {
             if ($shop['id_shop'] != 1) {

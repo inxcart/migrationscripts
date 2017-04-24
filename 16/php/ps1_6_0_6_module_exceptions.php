@@ -95,7 +95,7 @@ function ps1_6_0_6_module_exceptions()
                 $sqlDelete .= ' `id_hook_module_exceptions` = '.(int) $exception['id_hook_module_exceptions'].' AND';
                 foreach ($controllers as $cont) {
                     if ($exception['file_name'] == $cont) {
-                        $sqlInsert .= '(null, '.(int) $exception['id_shop'].', '.(int) $exception['id_module'].', '.(int) $exception['id_hook'].', \'module-'.pSQL($module).'-'.pSQL($exception['file_name']).'\'),';
+                        $sqlInsert .= '(null, '.(int) $exception['id_shop'].', '.(int) $exception['id_module'].', '.(int) $exception['id_hook'].', \'module-'.\pSQL($module).'-'.\pSQL($exception['file_name']).'\'),';
                     }
                 }
             }

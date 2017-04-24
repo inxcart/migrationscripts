@@ -29,7 +29,7 @@ use PsOneSixMigrator\Db;
 function ps1_6_0_5_add_new_tab($className, $name, $idParent, $returnId = false, $parentTab = null, $module = '')
 {
     if (!is_null($parentTab) && !empty($parentTab) && strtolower(trim($parentTab)) !== 'null') {
-        $idParent = (int) Db::getInstance()->getValue('SELECT `id_tab` FROM `'._DB_PREFIX_.'tab` WHERE `class_name` = \''.pSQL($parentTab).'\'');
+        $idParent = (int) Db::getInstance()->getValue('SELECT `id_tab` FROM `'._DB_PREFIX_.'tab` WHERE `class_name` = \''.\pSQL($parentTab).'\'');
     }
 
     $array = array();
@@ -38,9 +38,9 @@ function ps1_6_0_5_add_new_tab($className, $name, $idParent, $returnId = false, 
         $array[$temp[0]] = $temp[1];
     }
 
-    if (!(int) Db::getInstance()->getValue('SELECT count(id_tab) FROM `'._DB_PREFIX_.'tab` WHERE `class_name` = \''.pSQL($className).'\' ')) {
+    if (!(int) Db::getInstance()->getValue('SELECT count(id_tab) FROM `'._DB_PREFIX_.'tab` WHERE `class_name` = \''.\pSQL($className).'\' ')) {
         Db::getInstance()->execute(
-            'INSERT INTO `'._DB_PREFIX_.'tab` (`id_parent`, `class_name`, `module`, `position`) VALUES ('.(int) $idParent.', \''.pSQL($className).'\', \''.pSQL($module).'\',
+            'INSERT INTO `'._DB_PREFIX_.'tab` (`id_parent`, `class_name`, `module`, `position`) VALUES ('.(int) $idParent.', \''.\pSQL($className).'\', \''.\pSQL($module).'\',
 									(SELECT IFNULL(MAX(t.position),0)+ 1 FROM `'._DB_PREFIX_.'tab` t WHERE t.id_parent = '.(int) $idParent.'))'
         );
     }
@@ -53,8 +53,8 @@ function ps1_6_0_5_add_new_tab($className, $name, $idParent, $returnId = false, 
 		VALUES ('.(int) $lang['id_lang'].', (
 				SELECT `id_tab`
 				FROM `'._DB_PREFIX_.'tab`
-				WHERE `class_name` = \''.pSQL($className).'\' LIMIT 0,1
-			), \''.pSQL(isset($array[$lang['iso_code']]) ? $array[$lang['iso_code']] : $array['en']).'\')
+				WHERE `class_name` = \''.\pSQL($className).'\' LIMIT 0,1
+			), \''.\pSQL(isset($array[$lang['iso_code']]) ? $array[$lang['iso_code']] : $array['en']).'\')
 		'
         );
     }
@@ -64,7 +64,7 @@ function ps1_6_0_5_add_new_tab($className, $name, $idParent, $returnId = false, 
 								(SELECT `id_profile`, (
 								SELECT `id_tab`
 								FROM `'._DB_PREFIX_.'tab`
-								WHERE `class_name` = \''.pSQL($className).'\' LIMIT 0,1
+								WHERE `class_name` = \''.\pSQL($className).'\' LIMIT 0,1
 								), 1, 1, 1, 1 FROM `'._DB_PREFIX_.'profile` )'
     );
 
@@ -72,7 +72,7 @@ function ps1_6_0_5_add_new_tab($className, $name, $idParent, $returnId = false, 
         return (int) Db::getInstance()->getValue(
             'SELECT `id_tab`
 								FROM `'._DB_PREFIX_.'tab`
-								WHERE `class_name` = \''.pSQL($className).'\''
+								WHERE `class_name` = \''.\pSQL($className).'\''
         );
     }
 }

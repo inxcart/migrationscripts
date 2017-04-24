@@ -45,8 +45,8 @@ function ps1_6_0_12_update_alias()
                     Db::getInstance()->execute(
                         '
 					UPDATE `'._DB_PREFIX_.'alias`
-					SET alias = \''.pSQL(Tools::replaceAccentedChars($alias['alias'])).'\',
-					search = \''.pSQL(Tools::replaceAccentedChars($alias['search'])).'\'
+					SET alias = \''.\pSQL(Tools::replaceAccentedChars($alias['alias'])).'\',
+					search = \''.\pSQL(Tools::replaceAccentedChars($alias['search'])).'\'
 					WHERE id_alias = '.(int) $alias['id_alias']
                     );
                 }
