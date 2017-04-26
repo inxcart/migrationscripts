@@ -63,3 +63,7 @@ CREATE TABLE `PREFIX_page_cache` (
   ENGINE = InnoDB
   DEFAULT CHARSET=utf8mb4
   COLLATE utf8mb4_unicode_ci;
+
+INSERT INTO `PREFIX_hook` (`name`, `title`) VALUES ('actionRegisterAutoloader', 'actionRegisterAutoloader');
+INSERT INTO `PREFIX_hook` (`name`, `title`) VALUES ('actionRegisterErrorHandlers', 'actionRegisterErrorHandlers');
+INSERT INTO `PREFIX_hook` (`name`, `title`) VALUES ('actionRetrieveCurrencyRates', 'actionRetrieveCurrencyRates');
