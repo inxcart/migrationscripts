@@ -1,5 +1,40 @@
 SET NAMES 'utf8';
 
+ALTER TABLE `PREFIX_employee`
+ALTER COLUMN `last_connection_date`
+SET DEFAULT '1970-01-01';
+UPDATE `PREFIX_employee`
+SET `last_connection_date` = '1970-01-01'
+WHERE CAST(`last_connection_date` AS CHAR(20)) = '0000-00-00 00:00:00';
+
+ALTER TABLE `PREFIX_product`
+ALTER COLUMN `available_date`
+SET DEFAULT '1970-01-01';
+UPDATE `PREFIX_product`
+SET `available_date` = '1970-01-01'
+WHERE CAST(`available_date` AS CHAR(20)) = '0000-00-00 00:00:00';
+
+ALTER TABLE `PREFIX_product_shop`
+ALTER COLUMN `available_date`
+SET DEFAULT '1970-01-01';
+UPDATE `PREFIX_product_shop`
+SET `available_date` = '1970-01-01'
+WHERE CAST(`available_date` AS CHAR(20)) = '0000-00-00 00:00:00';
+
+ALTER TABLE `PREFIX_product_attribute`
+ALTER COLUMN `available_date`
+SET DEFAULT '1970-01-01';
+UPDATE `PREFIX_product_attribute`
+SET `available_date` = '1970-01-01'
+WHERE CAST(`available_date` AS CHAR(20)) = '0000-00-00 00:00:00';
+
+ALTER TABLE `PREFIX_product_shop_attribute`
+ALTER COLUMN `available_date`
+SET DEFAULT '1970-01-01';
+UPDATE `PREFIX_product_shop_attribute`
+SET `available_date` = '1970-01-01'
+WHERE CAST(`available_date` AS CHAR(20)) = '0000-00-00 00:00:00';
+
 ALTER TABLE `PREFIX_customer`
   MODIFY `passwd` VARCHAR(60) NOT NULL;
 ALTER TABLE `PREFIX_employee`
