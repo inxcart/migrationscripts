@@ -28,10 +28,10 @@ UPDATE `PREFIX_product_attribute`
 SET `available_date` = '1970-01-01'
 WHERE CAST(`available_date` AS CHAR(20)) = '0000-00-00 00:00:00';
 
-ALTER TABLE `PREFIX_product_shop_attribute`
+ALTER TABLE `PREFIX_product_attribute_shop`
 ALTER COLUMN `available_date`
 SET DEFAULT '1970-01-01';
-UPDATE `PREFIX_product_shop_attribute`
+UPDATE `PREFIX_product_attribute_shop`
 SET `available_date` = '1970-01-01'
 WHERE CAST(`available_date` AS CHAR(20)) = '0000-00-00 00:00:00';
 
